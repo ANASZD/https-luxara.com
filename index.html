@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Luxara Store</title>
 
 <style>
@@ -50,7 +52,7 @@ font-weight:bold;
 
 .hero{
 height:100vh;
-background:url("ChatGPT Image 7 mars 2026, 17_01_20.png") center/cover no-repeat;
+background:url("ChatGPT Image 6 mars 2026, 15_07_35.png") center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -60,22 +62,7 @@ color:white;
 
 .hero h1{
 font-size:60px;
-letter-spacing:5px;
-}
-
-.hero p{
-margin:15px 0;
-font-size:20px;
-}
-
-.hero button{
-padding:15px 30px;
-font-size:18px;
-background:black;
-color:white;
-border:none;
-border-radius:30px;
-cursor:pointer;
+letter-spacing:6px;
 }
 
 /* PRODUCTS */
@@ -123,6 +110,27 @@ border-radius:5px;
 cursor:pointer;
 }
 
+/* CART */
+
+.cart{
+padding:40px;
+text-align:center;
+background:white;
+margin:40px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.checkout{
+padding:15px 30px;
+background:black;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+margin-top:10px;
+}
+
 /* FOOTER */
 
 footer{
@@ -134,26 +142,29 @@ margin-top:50px;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
+
 <div class="logo">LUXARA</div>
+
 <nav>
 <a href="#">Home</a>
 <a href="#products">Products</a>
+<a href="#cart">Cart</a>
 <a href="#contact">Contact</a>
 </nav>
+
 </header>
 
 
 <section class="hero">
-<div>
+
 <h1>LUXARA</h1>
-<p>Trending Products • Affordable Prices</p>
-<button onclick="document.getElementById('products').scrollIntoView()">Shop Now</button>
-</div>
+
 </section>
 
 
@@ -164,37 +175,46 @@ margin-top:50px;
 <div class="grid">
 
 <div class="card">
+
 <img src="https://via.placeholder.com/300">
+
 <h3>Luxury Watch</h3>
+
 <p class="price">$120</p>
 
-<a href="https://wa.me/212696227593?text=I want to buy Luxury Watch from Luxara">
-<button>Order on WhatsApp</button>
-</a>
+<button onclick="addToCart('Luxury Watch',120)">
+Add to Cart
+</button>
 
 </div>
 
 
 <div class="card">
+
 <img src="https://via.placeholder.com/300">
+
 <h3>Elegant Bag</h3>
+
 <p class="price">$80</p>
 
-<a href="https://wa.me/212696227593?text=I want to buy Elegant Bag from Luxara">
-<button>Order on WhatsApp</button>
-</a>
+<button onclick="addToCart('Elegant Bag',80)">
+Add to Cart
+</button>
 
 </div>
 
 
 <div class="card">
+
 <img src="https://via.placeholder.com/300">
+
 <h3>Fashion Glasses</h3>
+
 <p class="price">$45</p>
 
-<a href="https://wa.me/212696227593?text=I want to buy Fashion Glasses from Luxara">
-<button>Order on WhatsApp</button>
-</a>
+<button onclick="addToCart('Fashion Glasses',45)">
+Add to Cart
+</button>
 
 </div>
 
@@ -203,19 +223,75 @@ margin-top:50px;
 </section>
 
 
+<section class="cart" id="cart">
+
+<h2>Your Cart</h2>
+
+<ul id="cart-items"></ul>
+
+<p>Total: <span id="total">$0</span></p>
+
+<a href="https://www.paypal.com">
+
+<button class="checkout">
+Checkout
+</button>
+
+</a>
+
+</section>
+
+
 <footer id="contact">
 
 <h3>Luxara Store</h3>
-<p>Contact us on WhatsApp</p>
 
-<a href="https://wa.me/212696227593" style="color:white;font-size:20px;">
-WhatsApp: 212696227593
-</a>
+<p>Email: anasziadi2005@gmail.com</p>
 
-<p style="margin-top:15px;">© 2026 Luxara</p>
+<p>WhatsApp: 212696227593</p>
+
+<p>© 2026 Luxara</p>
 
 </footer>
 
+
+<script>
+
+let cart = [];
+
+function addToCart(name,price){
+
+cart.push({name,price});
+
+updateCart();
+
+}
+
+function updateCart(){
+
+let list=document.getElementById("cart-items");
+
+list.innerHTML="";
+
+let total=0;
+
+cart.forEach(item=>{
+
+let li=document.createElement("li");
+
+li.textContent=item.name+" - $"+item.price;
+
+list.appendChild(li);
+
+total+=item.price;
+
+});
+
+document.getElementById("total").innerText="$"+total;
+
+}
+
+</script>
 
 </body>
 </html>
