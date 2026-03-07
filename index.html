@@ -1,55 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luxara Store</title>
 
 <style>
 
-body{
-font-family:Arial;
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
 background:#f5f5f5;
 }
 
+/* HEADER */
+
 header{
-background:black;
-color:white;
-padding:20px;
-text-align:center;
-font-size:28px;
+position:fixed;
+width:100%;
+top:0;
+background:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+z-index:1000;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
 letter-spacing:2px;
 }
 
-.products{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-padding:20px;
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
+font-weight:bold;
 }
 
-.product{
+/* HERO */
+
+.hero{
+height:100vh;
+background:url("hero.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:60px;
+letter-spacing:5px;
+}
+
+.hero p{
+margin:15px 0;
+font-size:20px;
+}
+
+.hero button{
+padding:15px 30px;
+font-size:18px;
+background:black;
+color:white;
+border:none;
+border-radius:30px;
+cursor:pointer;
+}
+
+/* PRODUCTS */
+
+.products{
+padding:80px 40px;
+text-align:center;
+}
+
+.products h2{
+margin-bottom:40px;
+font-size:32px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.card{
 background:white;
-width:220px;
-margin:15px;
 padding:15px;
 border-radius:10px;
-text-align:center;
-box-shadow:0 5px 10px rgba(0,0,0,0.1);
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-.product img{
+.card img{
 width:100%;
-border-radius:8px;
+border-radius:10px;
 }
 
 .price{
 color:#27ae60;
-font-size:18px;
 margin:10px 0;
+font-weight:bold;
 }
 
-button{
+.card button{
 background:black;
 color:white;
 border:none;
@@ -58,16 +123,14 @@ border-radius:5px;
 cursor:pointer;
 }
 
-button:hover{
-background:#333;
-}
+/* FOOTER */
 
 footer{
-text-align:center;
-padding:20px;
 background:#111;
 color:white;
-margin-top:30px;
+text-align:center;
+padding:30px;
+margin-top:50px;
 }
 
 </style>
@@ -76,37 +139,83 @@ margin-top:30px;
 <body>
 
 <header>
-Luxara
+<div class="logo">LUXARA</div>
+<nav>
+<a href="#">Home</a>
+<a href="#products">Products</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
-<div class="products">
 
-<div class="product">
-<img src="https://via.placeholder.com/200">
+<section class="hero">
+<div>
+<h1>LUXARA</h1>
+<p>Trending Products • Affordable Prices</p>
+<button onclick="document.getElementById('products').scrollIntoView()">Shop Now</button>
+</div>
+</section>
+
+
+<section class="products" id="products">
+
+<h2>Featured Products</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://via.placeholder.com/300">
 <h3>Luxury Watch</h3>
 <p class="price">$120</p>
-<button>Buy Now</button>
+
+<a href="https://wa.me/212696227593?text=I want to buy Luxury Watch from Luxara">
+<button>Order on WhatsApp</button>
+</a>
+
 </div>
 
-<div class="product">
-<img src="https://via.placeholder.com/200">
+
+<div class="card">
+<img src="https://via.placeholder.com/300">
 <h3>Elegant Bag</h3>
 <p class="price">$80</p>
-<button>Buy Now</button>
+
+<a href="https://wa.me/212696227593?text=I want to buy Elegant Bag from Luxara">
+<button>Order on WhatsApp</button>
+</a>
+
 </div>
 
-<div class="product">
-<img src="https://via.placeholder.com/200">
+
+<div class="card">
+<img src="https://via.placeholder.com/300">
 <h3>Fashion Glasses</h3>
 <p class="price">$45</p>
-<button>Buy Now</button>
-</div>
+
+<a href="https://wa.me/212696227593?text=I want to buy Fashion Glasses from Luxara">
+<button>Order on WhatsApp</button>
+</a>
 
 </div>
 
-<footer>
-© 2026 Luxara Store
+</div>
+
+</section>
+
+
+<footer id="contact">
+
+<h3>Luxara Store</h3>
+<p>Contact us on WhatsApp</p>
+
+<a href="https://wa.me/212696227593" style="color:white;font-size:20px;">
+WhatsApp: 212696227593
+</a>
+
+<p style="margin-top:15px;">© 2026 Luxara</p>
+
 </footer>
+
 
 </body>
 </html>
