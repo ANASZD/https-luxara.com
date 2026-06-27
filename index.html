@@ -12,53 +12,68 @@
     </script>
     <style>
         body { font-family: 'Cairo', sans-serif; background-color: #FCFBF7; }
-        .product-card { transition: transform 0.3s ease; }
-        .product-card:hover { transform: scale(1.02); }
+        .product-card { transition: all 0.4s ease; }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body class="text-brand-dark">
 
-    <!-- Header -->
+    <div class="bg-brand-dark text-white text-center py-2 text-xs md:text-sm font-bold tracking-widest">
+        🚚 شحن مجاني وسريع لكافة المدن المغربية - الدفع عند الاستلام
+    </div>
+
     <header class="bg-white py-4 shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <h2 class="text-2xl font-bold text-brand-gold">Luxara Beauty</h2>
-            <a href="https://wa.me/212781829704" class="bg-brand-whatsapp text-white px-6 py-2 rounded-full font-bold">تواصل معنا</a>
+            <a href="https://wa.me/212781829704" class="bg-brand-whatsapp text-white px-6 py-2 rounded-full font-bold hover:bg-green-600 transition">تواصل معنا</a>
         </div>
     </header>
 
-    <!-- قسم الفخار -->
+    <section class="bg-white py-20 text-center px-4 border-b border-gray-100">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-brand-dark mb-6">جمالٌ يجمع بين الفخامة والأصالة</h1>
+        <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+            مرحباً بك في Luxara Beauty.. نضع بين يديك كنوز المغرب، من منتجات الفخار اليدوية التي تحكي قصص التراث، وصولاً إلى مستحضرات العناية التي تبرز جمالك الطبيعي.
+        </p>
+    </section>
+
     <section class="py-16 container mx-auto px-4">
         <h2 class="text-3xl font-extrabold mb-10 border-r-4 border-brand-gold pr-4">منتجات الفخار التقليدي</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- كارت منتج 1 -->
-            <div class="bg-white p-4 rounded-2xl shadow-md product-card">
-                <img src="Gemini_Generated_Image_oy9i6ioy9i6ioy9i.jpg" class="rounded-xl w-full h-64 object-cover mb-4" alt="فخار">
+            <div class="bg-white p-4 rounded-3xl shadow-sm border border-gray-100 product-card">
+                <img src="Gemini_Generated_Image_oy9i6ioy9i6ioy9i.jpg" class="rounded-2xl w-full h-64 object-cover mb-4" alt="فخار">
                 <h3 class="text-xl font-bold">طاجين فخار فاخر</h3>
-                <p class="text-gray-500 my-2">صناعة يدوية بأصالة مغربية</p>
-                <button onclick="order('طاجين فخار')" class="w-full mt-4 py-2 border-2 border-brand-gold text-brand-gold rounded-xl font-bold hover:bg-brand-gold hover:text-white transition">أطلب الآن</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم المنتجات العصرية -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-extrabold mb-10 border-r-4 border-brand-dark pr-4">مستحضرات عصرية</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- كارت منتج 2 -->
-                <div class="bg-white p-4 rounded-2xl shadow-md product-card">
-                    <img src="Gemini_Generated_Image_oy9i6ioy9i6ioy9i.jpg" class="rounded-xl w-full h-64 object-cover mb-4" alt="مستحضر">
-                    <h3 class="text-xl font-bold"> Luxara Beauty</h3>
-                    <p class="text-gray-500 my-2">إشراقة طبيعية تدوم طويلاً</p>
-                    <button onclick="order('Luxara Liquid Blush')" class="w-full mt-4 py-2 bg-brand-dark text-white rounded-xl font-bold hover:bg-gray-800 transition">أطلب الآن</button>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-xl font-bold text-brand-gold">350 DH</span>
+                    <button onclick="order('طاجين فخار')" class="py-2 px-6 border-2 border-brand-gold text-brand-gold rounded-xl font-bold hover:bg-brand-gold hover:text-white transition">أطلب الآن</button>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-extrabold mb-10 border-r-4 border-brand-dark pr-4">مستحضرات عصرية</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-4 rounded-3xl shadow-sm border border-gray-100 product-card">
+                    <img src="Gemini_Generated_Image_oy9i6ioy9i6ioy9i.jpg" class="rounded-2xl w-full h-64 object-cover mb-4" alt="مستحضر">
+                    <h3 class="text-xl font-bold">Luxara Liquid Blush</h3>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-xl font-bold text-brand-gold">250 DH</span>
+                        <button onclick="order('Luxara Liquid Blush')" class="py-2 px-6 bg-brand-dark text-white rounded-xl font-bold hover:bg-black transition">أطلب الآن</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark text-gray-400 py-10 text-center text-sm">
+        <p class="font-bold text-white mb-2">© 2026 Luxara Beauty. جميع الحقوق محفوظة.</p>
+        <p>الأصالة المغربية بين يديك.</p>
+    </footer>
+
     <script>
         function order(productName) {
-            const msg = `مرحباً، أريد طلب منتج: ${productName}`;
+            const msg = `مرحباً، أريد طلب منتج: ${productName}. هل هو متوفر؟`;
             window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
         }
     </script>
