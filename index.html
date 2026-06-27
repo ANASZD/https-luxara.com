@@ -1,210 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Luxara Store</title>
+<title>Luxara Beauty</title>
 
-<style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
-}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-body{
-background:#f5f5f5;
-}
-
-/* HEADER */
-
-header{
-background:white;
-padding:15px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-position:sticky;
-top:0;
-}
-
-.logo{
-font-size:24px;
-font-weight:bold;
-letter-spacing:3px;
-}
-
-nav a{
-margin-left:20px;
-text-decoration:none;
-color:#333;
-font-weight:bold;
-}
-
-/* HERO */
-
-.hero{
-height:60vh;
-background:url("https://images.unsplash.com/photo-1607082349566-187342175e2f") center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-font-size:50px;
-}
-
-/* PRODUCTS */
-
-.products{
-padding:60px;
-text-align:center;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-margin-top:40px;
-}
-
-.card{
-background:white;
-padding:15px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.card img{
-width:100%;
-border-radius:10px;
-}
-
-.price{
-color:#27ae60;
-font-weight:bold;
-margin:10px 0;
-}
-
-button{
-background:black;
-color:white;
-border:none;
-padding:10px;
-border-radius:5px;
-cursor:pointer;
-width:100%;
-}
-
-/* FOOTER */
-
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:30px;
-margin-top:40px;
-}
-
-</style>
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-<header>
+<!-- HEADER -->
 
-<div class="logo">LUXARA</div>
+<header class="header">
 
-<nav>
+<div class="logo">
+LUXARA
+</div>
+
+<nav class="navbar">
+
 <a href="#">Home</a>
+
+<a href="#collection">Collection</a>
+
 <a href="#products">Products</a>
+
+<a href="#about">About</a>
+
+<a href="#contact">Contact</a>
+
 </nav>
 
-</header>
+<div class="icons">
 
-<div class="hero">
+<span>🔍</span>
 
-LUXARA STORE
+<span>♡</span>
+
+<span>🛒</span>
 
 </div>
 
-<section class="products" id="products">
+</header>
 
-<h2>Trending Products</h2>
+<!-- HERO -->
 
-<div class="grid" id="product-grid"></div>
+<section class="hero">
+
+<div class="hero-content">
+
+<p class="small-text">
+
+Luxury Beauty Collection
+
+</p>
+
+<h1>
+
+Glow With Confidence
+
+</h1>
+
+<p>
+
+Premium beauty products made to elevate your daily routine.
+
+</p>
+
+<a href="#products" class="btn">
+
+Shop Now
+
+</a>
+
+</div>
 
 </section>
 
+<!-- COLLECTION -->
+
+<section class="collection" id="collection">
+
+<h2>
+
+Featured Collection
+
+</h2>
+
+<p>
+
+Discover our most loved beauty essentials.
+
+</p>
+
+<div class="collection-grid">
+
+<div class="box">
+
+<img src="images/item1.jpg">
+
+<h3>Liquid Blush</h3>
+
+</div>
+
+<div class="box">
+
+<img src="images/item2.jpg">
+
+<h3>Foundation</h3>
+
+</div>
+
+<div class="box">
+
+<img src="images/item3.jpg">
+
+<h3>Lip Gloss</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="products" id="products">
+
+<h2>
+
+Best Sellers
+
+</h2>
+
+<div id="product-grid">
+
+</div>
+
+</section>
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter">
+
+<h2>
+
+Join Our Newsletter
+
+</h2>
+
+<p>
+
+Receive exclusive offers and new arrivals.
+
+</p>
+
+<form>
+
+<input
+type="email"
+placeholder="Your Email">
+
+<button>
+
+Subscribe
+
+</button>
+
+</form>
+
+</section>
+
+<!-- FOOTER -->
+
 <footer>
 
-<p>Luxara Store</p>
-<p>© 2026 Luxara</p>
+<div class="footer-logo">
+
+LUXARA
+
+</div>
+
+<div class="footer-links">
+
+<a href="#">Privacy</a>
+
+<a href="#">Terms</a>
+
+<a href="#">Support</a>
+
+</div>
+
+<p>
+
+© 2026 Luxara Beauty
+
+</p>
 
 </footer>
 
-<script>
+<script src="js/script.js"></script>
 
-const products = [
+</body>
 
-{
-name:"Smart Watch",
-price:"$39",
-img:"https://via.placeholder.com/300",
-link:"#"
-},
-
-{
-name:"Wireless Earbuds",
-price:"$29",
-img:"https://via.placeholder.com/300",
-link:"#"
-},
-
-{
-name:"Gaming Mouse",
-price:"$19",
-img:"https://via.placeholder.com/300",
-link:"#"
-},
-
-{
-name:"LED Strip Lights",
-price:"$15",
-img:"https://via.placeholder.com/300",
-link:"#"
-}
-
-];
-
-const grid = document.getElementById("product-grid");
-
-for(let i=0;i<40;i++){
-
-const p = products[i % products.length];
-
-grid.innerHTML += `
-<div class="card">
-
-<img src="${p.img}">
-
-<h3>${p.name}</h3>
-
-<p class="price">${p.price}</p>
-
-<a href="${p.link}" target="_blank">
-
-<button>Buy Now</button>
+</html>
 
 </a>
 
