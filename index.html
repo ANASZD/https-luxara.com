@@ -7,8 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // إعدادات المتغيرات العامة
-        const PHONE_NUMBER = "212781829704"; // ضع رقمك هنا بدون فواصل أو رموز
+        const PHONE_NUMBER = "212781829704"; 
 
         tailwind.config = {
             theme: {
@@ -49,9 +48,8 @@
 
     <section class="py-12 container mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div class="bg-gray-200 rounded-3xl h-64 lg:h-96 flex items-center justify-center text-gray-500">
-                <!-- مكان الصورة -->
-                صورة المنتج
+            <div class="rounded-3xl overflow-hidden shadow-xl hover-lift">
+                <img src="Gemini_Generated_Image_oy9i6ioy9i6ioy9i.jpg" alt="Luxara Product" class="w-full h-auto object-cover">
             </div>
             
             <div>
@@ -73,7 +71,6 @@
     </section>
 
     <script>
-        // تحديث روابط الواتساب تلقائياً عند تحميل الصفحة
         document.getElementById('wa-header-link').href = `https://wa.me/${PHONE_NUMBER}`;
 
         function sendOrder() {
