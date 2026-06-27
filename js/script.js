@@ -1,21 +1,61 @@
-// =========================
-// LUXARA BEAUTY
-// =========================
+// ======================
+// LUXARA PRODUCTS
+// ======================
 
-const header = document.querySelector(".header");
+const products = [
 
-window.addEventListener("scroll", () => {
+{
+    name:"Liquid Blush",
+    price:"$24",
+    image:"https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600"
+},
 
-    if(window.scrollY > 50){
+{
+    name:"Lip Gloss",
+    price:"$18",
+    image:"https://images.unsplash.com/photo-1583241800698-9d9df8d9b5a8?w=600"
+},
 
-        header.style.background = "#ffffff";
-        header.style.boxShadow = "0 10px 30px rgba(0,0,0,.08)";
+{
+    name:"Foundation",
+    price:"$35",
+    image:"https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?w=600"
+},
 
-    }else{
+{
+    name:"Beauty Cream",
+    price:"$29",
+    image:"https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600"
+}
 
-        header.style.background = "rgba(255,255,255,.95)";
-        header.style.boxShadow = "0 5px 20px rgba(0,0,0,.08)";
+];
 
-    }
+const grid = document.getElementById("product-grid");
+
+products.forEach(product=>{
+
+grid.innerHTML += `
+
+<div class="product-card">
+
+<img src="${product.image}" alt="${product.name}">
+
+<div class="product-info">
+
+<h3>${product.name}</h3>
+
+<p class="price">${product.price}</p>
+
+<a href="#" class="buy-btn">
+
+Shop Now
+
+</a>
+
+</div>
+
+</div>
+
+`;
 
 });
